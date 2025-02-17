@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nadège - Fashion & Gospel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff69b4;
+            --secondary-color: #4a4a4a;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1483412033650-1015ddeb83d1') center/cover;
+            height: 100vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .floating-music-notes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .music-note {
+            position: absolute;
+            color: var(--primary-color);
+            animation: floatUp 3s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-20vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .fashion-section {
+            background-color: #f8f9fa;
+            padding: 100px 0;
+        }
+
+        .fashion-card {
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .fashion-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .church-section {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+                        url('https://images.unsplash.com/photo-1438232992991-995b7058bbb3') center/cover;
+            color: white;
+            padding: 100px 0;
+        }
+
+        .social-icon {
+            font-size: 2rem;
+            margin: 0 10px;
+            color: var(--primary-color);
+            transition: transform 0.3s;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
+
+        .nav-link {
+            color: var(--primary-color) !important;
+            font-weight: bold;
+        }
+
+        .btn-custom {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            transition: transform 0.3s;
+        }
+
+        .btn-custom:hover {
+            transform: scale(1.1);
+            background-color: #ff4da6;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#" style="color: var(--primary-color);">Nadège</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#fashion">Mode</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#church">Chant & Église</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="floating-music-notes" id="musicNotes"></div>
+        <div class="container text-center">
+            <h1 class="display-1 mb-4">Nadège</h1>
+            <p class="lead mb-4">Fashion Enthusiast & Gospel Singer</p>
+            <button class="btn btn-custom">Découvrir mon univers</button>
+        </div>
+    </section>
+
+    <!-- Fashion Section -->
+    <section class="fashion-section" id="fashion">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: var(--primary-color);">Mon Style</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card fashion-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-tshirt mb-3" style="font-size: 3rem; color: var(--primary-color);"></i>
+                            <h5 class="card-title">Mode Urbaine</h5>
+                            <p class="card-text">Style contemporain et tendance</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card fashion-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-shoe-prints mb-3" style="font-size: 3rem; color: var(--primary-color);"></i>
+                            <h5 class="card-title">Accessoires</h5>
+                            <p class="card-text">Les détails qui font la différence</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card fashion-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-ring mb-3" style="font-size: 3rem; color: var(--primary-color);"></i>
+                            <h5 class="card-title">Bijoux</h5>
+                            <p class="card-text">L'élégance au quotidien</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Church Section -->
+    <section class="church-section" id="church">
+        <div class="container text-center">
+            <h2 class="mb-5">Chant & Spiritualité</h2>
+            <p class="lead mb-4">La musique gospel est ma passion, ma façon de partager l'amour et la joie</p>
+            <div class="row mt-5">
+                <div class="col-md-4 mb-4">
+                    <i class="fas fa-music mb-3" style="font-size: 3rem;"></i>
+                    <h4>Gospel</h4>
+                    <p>Chanteuse passionnée</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <i class="fas fa-church mb-3" style="font-size: 3rem;"></i>
+                    <h4>Église</h4>
+                    <p>Une communauté unie</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <i class="fas fa-heart mb-3" style="font-size: 3rem;"></i>
+                    <h4>Foi</h4>
+                    <p>Une source d'inspiration</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5" id="contact">
+        <div class="container text-center">
+            <h2 class="mb-5" style="color: var(--primary-color);">Restons connectés</h2>
+            <div class="social-links mb-4">
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+            <button class="btn btn-custom">Me contacter</button>
+        </div>
+    </section>
+
+    <footer class="bg-light py-4">
+        <div class="container text-center">
+            <p>&copy; 2025 Nadège. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Animation des notes de musique
+        function createMusicNote() {
+            const note = document.createElement('i');
+            note.className = 'fas fa-music music-note';
+            note.style.left = Math.random() * 100 + 'vw';
+            note.style.animationDuration = (Math.random() * 2 + 2) + 's';
+            document.getElementById('musicNotes').appendChild(note);
+            
+            setTimeout(() => {
+                note.remove();
+            }, 5000);
+        }
+
+        setInterval(createMusicNote, 300);
+
+        // Smooth scroll pour la navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation au scroll
+        window.addEventListener('scroll', function() {
+            const cards = document.querySelectorAll('.fashion-card');
+            cards.forEach(card => {
+                const cardPosition = card.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight;
+                
+                if(cardPosition < screenPosition) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
